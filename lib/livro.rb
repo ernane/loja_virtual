@@ -1,6 +1,6 @@
 class Livro
   attr_accessor :valor
-  attr_reader :categoria, :isbn
+  attr_reader :categoria, :isbn, :autor
 
   def initialize(autor, numero_de_paginas, valor, categoria, isbn = '1')
     @autor = autor
@@ -11,7 +11,7 @@ class Livro
   end
 
   def to_s
-    "Autor: #{@autor}, ISBN: #{@isbn}, Páginas: #{@numero_de_paginas}"
+    "Autor: #{@autor}, ISBN: #{@isbn}, Páginas: #{@numero_de_paginas}, Categoria: #{@categoria}, Valor: #{@valor}"
   end
 
   def eql?(other)
