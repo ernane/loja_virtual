@@ -24,3 +24,6 @@ puts '***** Executando o método livros_por_categoria *****'
 biblioteca.livros_por_categoria :web do |livro|
   puts livro
 end
+
+# Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
+biblioteca.livros_por_categoria :tdd
