@@ -1,11 +1,10 @@
 class Biblioteca
-  attr_reader :livros
-  
-  def initialize
-    @livros = []
+  def adiciona(livro)
+    @livros[livro.categoria] ||= []
+    @livros[livro.categoria] << livro
   end
 
-  def adiciona(livro)
-    @livros << livro
+  def livros
+    @livros.values.flatten
   end
 end
