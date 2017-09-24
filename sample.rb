@@ -1,23 +1,23 @@
 require File.expand_path('lib/loja_virtual')
 
 livros = [
-  { autor: 'Paulo Sousa', pagina: 135, valor: 169.99, categoria: :tdd, isbn: '9983179587' },
-  { autor: 'Saulo Silva', pagina: 239, valor: 175.99, categoria: :web, isbn: '9321739239' },
-  { autor: 'Jorge Alves', pagina: 457, valor: 230.10, categoria: :web, isbn: '9148579788' },
-  { autor: 'Paulo Silva', pagina: 351, valor: 220.00, categoria: :tdd, isbn: '5118172738' },
-  { autor: 'Saulo Alves', pagina: 945, valor: 199.30, categoria: :tdd, isbn: '3148575288' },
-  { autor: 'Jorge Sousa', pagina: 266, valor: 190.99, categoria: :dba, isbn: '8148579748' },
-  { autor: 'Paulo Alves', pagina: 323, valor: 175.99, categoria: :web, isbn: '6148545758' },
-  { autor: 'Saulo Sousa', pagina: 798, valor: 320.99, categoria: :dba, isbn: '4148671188' },
-  { autor: 'Jorge Silva', pagina: 417, valor: 199.99, categoria: :dba, isbn: '1145579722' }
+  { aut: 'Paulo Sousa', pag: 135, val: 169.99, categ: :tdd, isbn: '9983' },
+  { aut: 'Saulo Silva', pag: 239, val: 175.99, categ: :web, isbn: '9321' },
+  { aut: 'Jorge Alves', pag: 457, val: 230.15, categ: :web, isbn: '9148' },
+  { aut: 'Paulo Silva', pag: 351, val: 220.36, categ: :tdd, isbn: '5118' },
+  { aut: 'Saulo Alves', pag: 945, val: 199.32, categ: :tdd, isbn: '3148' },
+  { aut: 'Jorge Sousa', pag: 266, val: 190.99, categ: :dba, isbn: '8148' },
+  { aut: 'Paulo Alves', pag: 323, val: 175.99, categ: :web, isbn: '6148' },
+  { aut: 'Saulo Sousa', pag: 798, val: 320.99, categ: :dba, isbn: '4148' },
+  { aut: 'Jorge Silva', pag: 417, val: 199.99, categ: :dba, isbn: '1145' }
 ]
 
 biblioteca = Biblioteca.new
 livros.each do |livro|
-  biblioteca.adiciona(Livro.new(livro[:autor],
-                                livro[:pagina],
-                                livro[:valor],
-                                livro[:categoria],
+  biblioteca.adiciona(Livro.new(livro[:aut],
+                                livro[:pag],
+                                livro[:val],
+                                livro[:categ],
                                 livro[:isbn]))
 end
 puts '***** Executando o método livros_por_categoria (Biblioteca) *****'
@@ -25,7 +25,7 @@ biblioteca.livros_por_categoria :web do |livro|
   puts livro
 end
 # Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
-biblioteca.livros_por_categoria :tdd
+biblioteca.livros_por_categoria(:tdd)
 
 puts '***** Executando o método total (Relatorio) *****'
 relatorio = Relatorio.new(biblioteca)
