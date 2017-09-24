@@ -11,7 +11,9 @@ class Livro
   end
 
   def to_s
-    "Autor: #{@autor}, ISBN: #{@isbn}, Páginas: #{@numero_de_paginas}, Categoria: #{@categoria}, Valor: #{@valor}"
+    <<-END
+  Autor: #{@autor}, ISBN: #{@isbn}, Páginas: #{@numero_de_paginas}, Categoria: #{@categoria}, Valor: #{@valor}
+    END
   end
 
   def eql?(other)

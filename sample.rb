@@ -20,10 +20,13 @@ livros.each do |livro|
                                 livro[:categoria],
                                 livro[:isbn]))
 end
-puts '***** Executando o método livros_por_categoria *****'
+puts '***** Executando o método livros_por_categoria (Biblioteca) *****'
 biblioteca.livros_por_categoria :web do |livro|
   puts livro
 end
-
 # Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
 biblioteca.livros_por_categoria :tdd
+
+puts '***** Executando o método total (Relatorio) *****'
+relatorio = Relatorio.new(biblioteca)
+puts relatorio.total
