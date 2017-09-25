@@ -8,10 +8,6 @@ class Relatorio
   end
 
   def titulos
-    titulos = []
-    @biblioteca.livros.each do |livro|
-      titulos << livro.titulo
-    end
-    titulos
+    @biblioteca.livros.map { |livro| livro.titulo }
   end
 end
