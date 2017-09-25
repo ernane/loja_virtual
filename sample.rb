@@ -28,6 +28,12 @@ end
 # Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
 biblioteca.livros_por_categoria(:tdd)
 
+imprime_livro_no_console = lambda do |livro|
+  puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
+end
+puts '***** Executando o método livros_por_categoria com um lambda (Biblioteca) *****'
+biblioteca.livros_por_categoria(:tdd, &imprime_livro_no_console)
+
 puts '***** Executando o método total (Relatorio) *****'
 relatorio = Relatorio.new(biblioteca)
 puts "Valor Total: #{relatorio.total}"
