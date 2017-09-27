@@ -5,9 +5,10 @@ class Biblioteca
   end
 
   def adiciona(livro)
-    @livros[livro.categoria] ||= []
-    @livros[livro.categoria] << livro
-    @banco_de_arquivos.salva livro
+    salva livro do
+      @livros[livro.categoria] ||= []
+      @livros[livro.categoria] << livro
+    end
   end
 
   def livros
@@ -18,5 +19,12 @@ class Biblioteca
     @livros[categoria].each do |livro|
       yield livro if block_given?
     end
+  end
+
+  private
+
+  def salva(livro)
+    @banco_de_arquivos.salva livro
+    yield
   end
 end
