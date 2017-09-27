@@ -1,11 +1,13 @@
 class Biblioteca
   def initialize
     @livros = {}
+    @banco_de_arquivos = BancoDeArquivos.new
   end
 
   def adiciona(livro)
     @livros[livro.categoria] ||= []
     @livros[livro.categoria] << livro
+    @banco_de_arquivos.salva livro
   end
 
   def livros

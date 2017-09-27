@@ -1,0 +1,72 @@
+--- !ruby/object:Livro
+titulo: TDD A
+autor: Paulo Sousa
+numero_de_paginas: 135
+valor: 169.99
+categoria: :tdd
+isbn: '9983'
+
+--- !ruby/object:Livro
+titulo: PHP A
+autor: Saulo Silva
+numero_de_paginas: 239
+valor: 175.99
+categoria: :web
+isbn: '9321'
+
+--- !ruby/object:Livro
+titulo: PHP C
+autor: Jorge Alves
+numero_de_paginas: 457
+valor: 230.15
+categoria: :web
+isbn: '9148'
+
+--- !ruby/object:Livro
+titulo: TDD B
+autor: Paulo Silva
+numero_de_paginas: 351
+valor: 220.36
+categoria: :tdd
+isbn: '5118'
+
+--- !ruby/object:Livro
+titulo: TDD C
+autor: Saulo Alves
+numero_de_paginas: 945
+valor: 199.32
+categoria: :tdd
+isbn: '3148'
+
+--- !ruby/object:Livro
+titulo: SQL A
+autor: Jorge Sousa
+numero_de_paginas: 266
+valor: 190.99
+categoria: :dba
+isbn: '8148'
+
+--- !ruby/object:Livro
+titulo: PHP B
+autor: Paulo Alves
+numero_de_paginas: 323
+valor: 175.99
+categoria: :web
+isbn: '6148'
+
+--- !ruby/object:Livro
+titulo: SQL B
+autor: Saulo Sousa
+numero_de_paginas: 798
+valor: 320.99
+categoria: :dba
+isbn: '4148'
+
+--- !ruby/object:Livro
+titulo: SQL C
+autor: Jorge Silva
+numero_de_paginas: 417
+valor: 199.99
+categoria: :dba
+isbn: '1145'
+
