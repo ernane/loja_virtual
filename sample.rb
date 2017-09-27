@@ -13,20 +13,20 @@ livros = [
 ]
 
 biblioteca = Biblioteca.new
-livros.each do |livro|
-  biblioteca.adiciona(Livro.new(livro[:tit],
-                                livro[:aut],
-                                livro[:pag],
-                                livro[:val],
-                                livro[:categ],
-                                livro[:isbn]))
-end
+# livros.each do |livro|
+#   biblioteca.adiciona(Livro.new(livro[:tit],
+#                                 livro[:aut],
+#                                 livro[:pag],
+#                                 livro[:val],
+#                                 livro[:categ],
+#                                 livro[:isbn]))
+# end
 puts '***** Executando o método livros_por_categoria (Biblioteca) *****'
 biblioteca.livros_por_categoria :web do |livro|
   puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
 end
 # Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
-biblioteca.livros_por_categoria(:tdd)
+puts biblioteca.livros_por_categoria(:tdd)
 
 imprime_livro_no_console = lambda do |livro|
   puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
