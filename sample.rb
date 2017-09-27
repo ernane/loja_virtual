@@ -12,15 +12,16 @@ livros = [
   { tit: 'SQL C', aut: 'Jorge Silva', pag: 417, val: 199.99, categ: :dba, isbn: '1145' }
 ]
 
+File.delete('livros.yml') if File.exist?('livros.yml')
 biblioteca = Biblioteca.new
-# livros.each do |livro|
-#   biblioteca.adiciona(Livro.new(livro[:tit],
-#                                 livro[:aut],
-#                                 livro[:pag],
-#                                 livro[:val],
-#                                 livro[:categ],
-#                                 livro[:isbn]))
-# end
+livros.each do |livro|
+  biblioteca.adiciona(Livro.new(livro[:tit],
+                                livro[:aut],
+                                livro[:pag],
+                                livro[:val],
+                                livro[:categ],
+                                livro[:isbn]))
+end
 puts '***** Executando o método livros_por_categoria com bloco (Biblioteca) *****'
 biblioteca.livros_por_categoria :web do |livro|
   puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
@@ -41,3 +42,9 @@ puts "Valor Total: #{relatorio.total}"
 
 puts '***** Executando o método titulos (Biblioteca) *****'
 puts relatorio.titulos
+
+puts '***** Executando o métodos herdados da class Midia *****' 
+livro = Livro.new('TDD com Ruby', 'Marcio Silva', 395, 150.25, :tdd, '8957')
+dvd = DVD.new('Linux para desenvolvedores', 250.45, :linux)
+puts "Livro. Título: #{livro.titulo} - Valor: #{livro.valor}"
+puts "DVD. Título: #{dvd.titulo} - Valor: #{dvd.valor}"
