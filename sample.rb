@@ -21,12 +21,13 @@ biblioteca = Biblioteca.new
 #                                 livro[:categ],
 #                                 livro[:isbn]))
 # end
-puts '***** Executando o método livros_por_categoria (Biblioteca) *****'
+puts '***** Executando o método livros_por_categoria com bloco (Biblioteca) *****'
 biblioteca.livros_por_categoria :web do |livro|
   puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
 end
 # Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
-puts biblioteca.livros_por_categoria(:tdd)
+puts '***** Executando o método livros_por_categoria sem bloco(Biblioteca) *****'
+puts biblioteca.livros_por_categoria(:dba)
 
 imprime_livro_no_console = lambda do |livro|
   puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
