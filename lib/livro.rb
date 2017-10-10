@@ -1,6 +1,8 @@
 class Livro < Midia
   attr_reader :categoria, :isbn, :autor
 
+  include FormatadorMoeda
+
   def initialize(titulo, autor, numero_de_paginas, valor, categoria, isbn = '1')
     @titulo = titulo
     @autor = autor

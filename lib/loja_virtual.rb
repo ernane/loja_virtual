@@ -1,3 +1,4 @@
+require File.expand_path('lib/formatador_moeda')
 require File.expand_path('lib/midia')
 require File.expand_path('lib/dvd')
 require File.expand_path('lib/cd')

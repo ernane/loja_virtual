@@ -46,9 +46,12 @@ puts relatorio.titulos
 puts '***** Executando o métodos herdados da class Midia *****' 
 livro = Livro.new('TDD com Ruby', 'Marcio Silva', 395, 69.90, :tdd, '8957')
 dvd = DVD.new('Linux para desenvolvedores', 98.90, :linux)
+dvd.extend FormatadorMoeda
 puts "Livro. Título: #{livro.titulo} - Valor: #{livro.valor}"
 puts "DVD. Título: #{dvd.titulo} - Valor: #{dvd.valor}"
 puts "Livro. Título: #{livro.titulo} - Valor com desconto: #{livro.valor_com_desconto}"
+puts "Livro. Título: #{livro.titulo} - Valor formatado: #{livro.valor_formatado}"
+puts "DVD. Título: #{dvd.titulo} - Valor formatado: #{dvd.valor_formatado}"
 puts "DVD. Título: #{dvd.titulo} - Valor com desconto: #{dvd.valor_com_desconto}"
 
 puts "Invocando o valor_com_desconto da Classe Midia"
