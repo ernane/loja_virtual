@@ -8,6 +8,12 @@ class Midia
   end
 
   def valor_com_desconto
-    @valor - (@valor * @desconto)
+    @valor - desconto
+  end
+
+  private
+
+  def desconto
+    @valor * @desconto
   end
 end

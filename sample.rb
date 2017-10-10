@@ -54,3 +54,7 @@ puts "DVD. Título: #{dvd.titulo} - Valor com desconto: #{dvd.valor_com_desconto
 puts "Invocando o valor_com_desconto da Classe Midia"
 midia = Midia.new
 puts midia.valor_com_desconto
+
+windows = CD.new "Windows 95", 239.9, :sistemas_operacionais
+p windows
+puts windows
