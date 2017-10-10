@@ -5,6 +5,7 @@ numero_de_paginas: 135
 valor: 169.99
 categoria: :tdd
 isbn: '9983'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: PHP A
@@ -13,6 +14,7 @@ numero_de_paginas: 239
 valor: 175.99
 categoria: :web
 isbn: '9321'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: PHP C
@@ -21,6 +23,7 @@ numero_de_paginas: 457
 valor: 230.15
 categoria: :web
 isbn: '9148'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: TDD B
@@ -29,6 +32,7 @@ numero_de_paginas: 351
 valor: 220.36
 categoria: :tdd
 isbn: '5118'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: TDD C
@@ -37,6 +41,7 @@ numero_de_paginas: 945
 valor: 199.32
 categoria: :tdd
 isbn: '3148'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: SQL A
@@ -45,6 +50,7 @@ numero_de_paginas: 266
 valor: 190.99
 categoria: :dba
 isbn: '8148'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: PHP B
@@ -53,6 +59,7 @@ numero_de_paginas: 323
 valor: 175.99
 categoria: :web
 isbn: '6148'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: SQL B
@@ -61,6 +68,7 @@ numero_de_paginas: 798
 valor: 320.99
 categoria: :dba
 isbn: '4148'
+desconto: 0.15
 
 --- !ruby/object:Livro
 titulo: SQL C
@@ -69,4 +77,5 @@ numero_de_paginas: 417
 valor: 199.99
 categoria: :dba
 isbn: '1145'
+desconto: 0.15
 

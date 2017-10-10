@@ -8,6 +8,7 @@ class Livro < Midia
     @valor = valor
     @categoria = categoria
     @isbn = isbn
+    @desconto = 0.15
   end
 
   def to_s
