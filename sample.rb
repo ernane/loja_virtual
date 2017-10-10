@@ -13,7 +13,7 @@ livros = [
 ]
 
 File.delete('livros.yml') if File.exist?('livros.yml')
-biblioteca = Biblioteca.new
+biblioteca = VendaFacil::Set.new
 livros.each do |livro|
   biblioteca.adiciona(Livro.new(livro[:tit],
                                 livro[:aut],
@@ -55,6 +55,7 @@ puts "Invocando o valor_com_desconto da Classe Midia"
 midia = Midia.new
 puts midia.valor_com_desconto
 
+puts "Classe CD"
 windows = CD.new "Windows 95", 239.9, :sistemas_operacionais
 p windows
 puts windows
