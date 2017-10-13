@@ -8,6 +8,6 @@ class Relatorio
   end
 
   def titulos
-    @biblioteca.livros.map(&:titulo)
+    @biblioteca.map(&:titulo)
   end
 end

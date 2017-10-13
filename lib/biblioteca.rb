@@ -1,30 +1,37 @@
-module VendaFacil
-  class Set
-    def initialize
-      @banco_de_arquivos = BancoDeArquivos.new
-    end
+class Biblioteca
+  include Enumerable
 
-    def adiciona(livro)
-      salva livro do
-        livros << livro
-      end
-    end
+  def initialize
+    @banco_de_arquivos = BancoDeArquivos.new
+  end
 
-    def livros_por_categoria(categoria)
-      livros.select { |livro| livro.categoria == categoria }.each do |livro|
-        yield livro if block_given?
-      end
+  def adiciona(livro)
+    salva livro do
+      livros << livro
     end
+  end
 
-    def livros
-      @livros ||= @banco_de_arquivos.carrega
+  def livros_por_categoria(categoria)
+    livros.select { |livro| livro.categoria == categoria }.each do |livro|
+      yield livro if block_given?
     end
+  end
 
-    private
+  def livros
+    @livros ||= @banco_de_arquivos.carrega
+  end
 
-    def salva(livro)
-      @banco_de_arquivos.salva livro
-      yield
-    end
+  # método each que possibilita que os outros métodos
+  # do módulo Enumerable funcionem em uma
+  # instância de Biblioteca
+  def each
+    livros.each { |livro| yield livro }
+  end
+
+  private
+
+  def salva(livro)
+    @banco_de_arquivos.salva livro
+    yield
   end
 end

@@ -13,7 +13,8 @@ livros = [
 ]
 
 File.delete('livros.yml') if File.exist?('livros.yml')
-biblioteca = VendaFacil::Set.new
+# biblioteca = VendaFacil::Set.new
+biblioteca = Biblioteca.new
 livros.each do |livro|
   biblioteca.adiciona(Livro.new(livro[:tit],
                                 livro[:aut],
