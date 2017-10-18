@@ -12,7 +12,7 @@ livros = [
   { tit: 'SQL C', aut: 'Jorge Silva', pag: 417, val: 199.99, categ: :dba, isbn: '1145' }
 ]
 
-File.delete('livros.yml') if File.exist?('livros.yml')
+File.delete('midias.yml') if File.exist?('midias.yml')
 # biblioteca = VendaFacil::Set.new
 biblioteca = Biblioteca.new
 livros.each do |livro|

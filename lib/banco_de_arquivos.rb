@@ -2,7 +2,7 @@ require 'yaml'
 
 class BancoDeArquivos
   def salva(livro)
-    File.open('livros.yml', 'a') do |arquivo|
+    File.open('midias.yml', 'a') do |arquivo|
       arquivo.puts YAML.dump(livro)
       arquivo.puts
     end
@@ -10,7 +10,7 @@ class BancoDeArquivos
 
   def carrega
     $/ = "\n\n"
-    File.open('livros.yml', 'r').map do |livro_serializado|
+    File.open('midias.yml', 'r').map do |livro_serializado|
       YAML.load livro_serializado
     end
   end
