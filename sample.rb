@@ -24,18 +24,18 @@ livros.each do |livro|
                                 livro[:isbn]))
 end
 puts '***** Executando o método livros_por_categoria com bloco (Biblioteca) *****'
-biblioteca.livros_por_categoria :web do |livro|
-  puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
+biblioteca.midias_por_categoria :web do |midia|
+  puts "Título: #{midia.titulo} - Categoria: #{midia.categoria}"
 end
 # Método não apresentará nenhuma resposta pois não foi passado o bloco como argumento
 puts '***** Executando o método livros_por_categoria sem bloco(Biblioteca) *****'
-puts biblioteca.livros_por_categoria(:dba)
+puts biblioteca.midias_por_categoria(:dba)
 
 imprime_livro_no_console = lambda do |livro|
   puts "Título: #{livro.titulo} - Categoria: #{livro.categoria}"
 end
 puts '***** Executando o método livros_por_categoria com um lambda (Biblioteca) *****'
-biblioteca.livros_por_categoria(:tdd, &imprime_livro_no_console)
+biblioteca.midias_por_categoria(:tdd, &imprime_livro_no_console)
 
 puts '***** Executando o método total (Relatorio) *****'
 relatorio = Relatorio.new(biblioteca)
@@ -44,7 +44,7 @@ puts "Valor Total: #{relatorio.total}"
 puts '***** Executando o método titulos (Biblioteca) *****'
 puts relatorio.titulos
 
-puts '***** Executando o métodos herdados da class Midia *****' 
+puts '***** Executando o métodos herdados da class Midia *****'
 livro = Livro.new('TDD com Ruby', 'Marcio Silva', 395, 69.90, :tdd, '8957')
 dvd = DVD.new('Linux para desenvolvedores', 98.90, :linux)
 dvd.extend FormatadorMoeda
@@ -55,11 +55,19 @@ puts "Livro. Título: #{livro.titulo} - Valor formatado: #{livro.valor_formatado
 puts "DVD. Título: #{dvd.titulo} - Valor formatado: #{dvd.valor_formatado}"
 puts "DVD. Título: #{dvd.titulo} - Valor com desconto: #{dvd.valor_com_desconto}"
 
-puts "Invocando o valor_com_desconto da Classe Midia"
+puts 'Invocando o valor_com_desconto da Classe Midia'
 midia = Midia.new
 puts midia.valor_com_desconto
 
-puts "Classe CD"
-windows = CD.new "Windows 95", 239.9, :sistemas_operacionais
+puts 'Classe CD'
+windows = CD.new 'Windows 95', 239.9, :sistemas_operacionais
 p windows
 puts windows
+
+biblioteca_r = Biblioteca.new
+biblioteca.adiciona(Revista.new('MundoR'))
+biblioteca.adiciona(DVD.new('Windows para desenvolvedores', 101.99, :windows))
+
+puts 'Biblioteca de revista'
+biblioteca_r.each { |b| puts b.titulo }
+puts biblioteca_r.midias_por_categoria(:windows)

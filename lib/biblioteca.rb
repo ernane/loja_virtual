@@ -5,33 +5,33 @@ class Biblioteca
     @banco_de_arquivos = BancoDeArquivos.new
   end
 
-  def adiciona(livro)
-    salva livro do
-      livros << livro
+  def adiciona(midia)
+    salva midia do
+      midias << midia 
+    end if midia.kind_of? Midia
+  end
+
+  def midias_por_categoria(categoria)
+    midias.select { |midia| midia.categoria == categoria }.each do |midia|
+      yield midia if block_given?
     end
   end
 
-  def livros_por_categoria(categoria)
-    livros.select { |livro| livro.categoria == categoria }.each do |livro|
-      yield livro if block_given?
-    end
-  end
-
-  def livros
-    @livros ||= @banco_de_arquivos.carrega
+  def midias
+    @midias ||= @banco_de_arquivos.carrega
   end
 
   # método each que possibilita que os outros métodos
   # do módulo Enumerable funcionem em uma
   # instância de Biblioteca
   def each
-    livros.each { |livro| yield livro }
+    midias.each { |midia| yield midia }
   end
 
   private
 
-  def salva(livro)
-    @banco_de_arquivos.salva livro
+  def salva(midia)
+    @banco_de_arquivos.salva midia
     yield
   end
 end

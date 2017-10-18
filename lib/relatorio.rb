@@ -4,7 +4,7 @@ class Relatorio
   end
 
   def total
-    @biblioteca.livros.map(&:valor).inject(:+)
+    @biblioteca.midias.map(&:valor).inject(:+)
   end
 
   def titulos

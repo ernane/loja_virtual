@@ -1,6 +1,6 @@
 class Midia
   attr_accessor :valor
-  attr_reader :titulo
+  attr_reader :titulo, :categoria
 
   def initialize
     @desconto = 0.1

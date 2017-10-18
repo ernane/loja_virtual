@@ -79,3 +79,9 @@ categoria: :dba
 isbn: '1145'
 desconto: 0.15
 
+--- !ruby/object:DVD
+desconto: 0.1
+valor: 101.99
+titulo: Windows para desenvolvedores
+categoria: :windows
+
