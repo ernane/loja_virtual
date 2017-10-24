@@ -1,4 +1,6 @@
 class DVD < Midia
+  include FormatadorMoeda
+
   def initialize(titulo, valor, categoria)
     super()
     @titulo = titulo

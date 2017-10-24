@@ -71,3 +71,10 @@ biblioteca.adiciona(DVD.new('Windows para desenvolvedores', 101.99, :windows))
 puts 'Biblioteca de revista'
 biblioteca_r.each { |b| puts b.titulo }
 puts biblioteca_r.midias_por_categoria(:windows)
+
+puts '************ CAPITULO 8 *************'
+
+windows = DVD.new 'Windows 7 for Dummies', 98.9, :sistemas_operacionais
+
+puts "DVD #{windows.valor_formatado}"
+puts "DVD com desconto #{windows.valor_com_desconto_formatado}"
