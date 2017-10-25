@@ -1,17 +1,14 @@
 class DVD < Midia
-  def self.formata_moeda
-    def valor_formatado
-      bar = ->(y) { "R$ #{y}" }
-      bar.call(@valor)
-    end
-
-    def valor_com_desconto_formatado
-      bar = ->(y) { "R$ #{y}" }
-      bar.call(valor_com_desconto)
+  def self.formata_moeda(*variaveis_e_metodos)
+    variaveis_e_metodos.each do |name|
+      define_method("#{name}_formatado") do
+        valor = respond_to?(name) ? send(name) : instance_variable_get("@#{name}")
+        "R$ #{valor}"
+      end
     end
   end
 
-  formata_moeda
+  formata_moeda :valor_com_desconto, :valor
 
   def initialize(titulo, valor, categoria)
     super()
