@@ -1,7 +1,7 @@
 class Livro < Midia
   attr_reader :categoria, :isbn, :autor
 
-  extend FormatadorMoeda
+  include FormatadorMoeda
 
   formata_moeda :valor_com_desconto, :valor
 

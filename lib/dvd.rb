@@ -1,5 +1,5 @@
 class DVD < Midia
-  extend FormatadorMoeda
+  include FormatadorMoeda
 
   formata_moeda :valor_com_desconto, :valor
 
