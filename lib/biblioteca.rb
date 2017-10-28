@@ -12,10 +12,10 @@ class Biblioteca
   end
 
   def midias_por_categoria(categoria)
-    midias.select do |midia|
-      midia.categoria == categoria if
-                              midia.respond_to? :categoria
-    end.each do |midia|
+    m = midias.select do |midia|
+      midia.categoria == categoria if midia.respond_to? :categoria
+    end
+    m.each do |midia|
       yield midia if block_given?
     end
   end
@@ -24,9 +24,9 @@ class Biblioteca
     @midias ||= @banco_de_arquivos.carrega
   end
 
-  # método each que possibilita que os outros métodos
-  # do módulo Enumerable funcionem em uma
-  # instância de Biblioteca
+  # metodo each que possibilita que os outros metodos
+  # do modulo Enumerable funcionem em uma
+  # instancia de Biblioteca
   def each
     midias.each { |midia| yield midia }
   end
