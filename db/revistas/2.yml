@@ -2,3 +2,5 @@
 titulo: Mundo R
 valor: 10.9
 id: 2
+destroyed: false
+new_record: false

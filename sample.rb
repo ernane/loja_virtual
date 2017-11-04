@@ -135,3 +135,11 @@ mundo_r.save
 
 mundo_j2 = Revista.find 1
 p mundo_j2.valor
+
+mundo_j2.destroy
+
+begin
+  Revista.find 42
+rescue DocumentNotFound => erro
+  p erro
+end
