@@ -81,6 +81,8 @@ desconto: 0.15
 
 --- !ruby/object:Revista
 titulo: MundoR
+valor: 10.9
+id: 1
 
 --- !ruby/object:DVD
 desconto: 0.1
