@@ -24,10 +24,40 @@ module ActiveFile
     def next_id
       Dir.glob('db/revistas/*.yml').size + 1
     end
+
+    def field(name)
+      @fields ||= []
+      @fields << name
+      get = %{
+          def #{name}
+            @#{name}
+          end
+      }
+      set = %{
+          def #{name}=(valor)
+            @#{name}=valor
+          end
+      }
+      class_eval get
+      class_eval set
+    end
   end
 
   def self.included(base)
     base.extend ClassMethods
+    base.class_eval do
+      attr_reader :id, :destroyed, :new_record
+
+      def initialize(parameters = {})
+        @id = self.class.next_id
+        @destroyed = false
+        @new_record = true
+
+        parameters.each do |key, value|
+          instance_variable_set "@#{key}", value
+        end
+      end
+    end
   end
 
   private

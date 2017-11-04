@@ -111,7 +111,7 @@ p windows
 puts windows
 
 biblioteca_r = Biblioteca.new
-biblioteca.adiciona(Revista.new('MundoR', 10.9))
+biblioteca.adiciona(Revista.new(titulo: 'MundoR', valor: 10.9))
 biblioteca.adiciona(DVD.new('Windows para desenvolvedores', 101.99, :windows))
 
 puts 'Biblioteca de revista'
@@ -125,12 +125,12 @@ windows = DVD.new 'Windows 7 for Dummies', 98.9, :sistemas_operacionais
 puts "DVD #{windows.valor_formatado}"
 puts "DVD com desconto #{windows.valor_com_desconto_formatado}"
 
-mundo_j = Revista.new 'Mundo J', 10.9
+mundo_j = Revista.new titulo: 'Mundo J', valor: 10.9
 puts "Valor original Revista: #{mundo_j.valor}"
 mundo_j.valor = 15.50
 mundo_j.save
 
-mundo_r = Revista.new 'Mundo R', 10.9
+mundo_r = Revista.new titulo: 'Mundo R', valor: 10.9
 mundo_r.save
 
 mundo_j2 = Revista.find 1
