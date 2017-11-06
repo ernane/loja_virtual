@@ -14,6 +14,13 @@ module ActiveFile
   end
 
   module ClassMethods
+    def method_missing(name, *args, &block)
+      load_all.select do |object|
+        field = name.to_s.split("_").last
+        object.send(field) == args.first
+      end
+    end
+
     def find(id)
       unless File.exist?("db/revistas/#{id}.yml")
         raise DocumentNotFound, "Arquivo #{id} não encontrado.", caller
@@ -40,6 +47,18 @@ module ActiveFile
       }
       class_eval get
       class_eval set
+    end
+
+    private
+
+    def load_all
+      Dir.glob('db/revistas/*.yml').map do |file|
+        deserialize file
+      end
+    end
+
+    def deserialize(file)
+      YAML.load File.open(file, 'r')
     end
   end
 
