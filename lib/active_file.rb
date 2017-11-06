@@ -15,8 +15,10 @@ module ActiveFile
 
   module ClassMethods
     def method_missing(name, *args, &block)
+      field = name.to_s.split("_").last
+
+      super if @fields.include? field
       load_all.select do |object|
-        field = name.to_s.split("_").last
         object.send(field) == args.first
       end
     end
