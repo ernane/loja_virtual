@@ -15,11 +15,15 @@ module ActiveFile
 
   module ClassMethods
     def method_missing(name, *args, &block)
-      field = name.to_s.split("_").last
+      super unless name.to_s =~ /^find_by_(.*)/
+
+      argument = args.first
+      field = $1
 
       super if @fields.include? field
+
       load_all.select do |object|
-        object.send(field) == args.first
+        should_select? object, field, argument
       end
     end
 
@@ -52,6 +56,14 @@ module ActiveFile
     end
 
     private
+
+    def should_select?(object, field, argument)
+      if argument.is_a? Regexp
+        object.send(field) =~ argument
+      else
+        object.send(field) == argument
+      end
+    end
 
     def load_all
       Dir.glob('db/revistas/*.yml').map do |file|

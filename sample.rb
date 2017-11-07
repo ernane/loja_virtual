@@ -146,6 +146,8 @@ end
 
 m_r1 = Revista.find_by_titulo 'Mundo R'
 m_r2 = Revista.find_by_valor 10.9
+m_r3 = Revista.find_by_titulo /Mundo/
 
 m_r1.each { |r| puts r.titulo }
 m_r2.each { |r| puts r.valor }
+m_r3.each { |r| puts r.titulo }
