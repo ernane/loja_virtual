@@ -11,6 +11,15 @@ module FormatadorMoeda
                   end
           "R$ #{valor}"
         end
+        # metodo que retorna valor por extenso em reais
+        define_method("#{name}_por_extenso") do
+          valor = if respond_to?(name)
+                    send(name)
+                  else
+                    instance_variable_get("@#{name}")
+                  end
+          valor.por_extenso_em_reais
+        end
       end
     end
   end

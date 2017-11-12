@@ -122,8 +122,9 @@ puts '************ CAPITULO 8 *************'
 
 windows = DVD.new 'Windows 7 for Dummies', 98.9, :sistemas_operacionais
 
-puts "DVD #{windows.valor_formatado}"
+puts "DVD #{windows.valor_formatado} - #{windows.valor_por_extenso}"
 puts "DVD com desconto #{windows.valor_com_desconto_formatado}"
+
 
 mundo_j = Revista.new titulo: 'Mundo J', valor: 10.9
 puts "Valor original Revista: #{mundo_j.valor}"

@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'brnumeros'
 require File.expand_path('lib/formatador_moeda')
 require File.expand_path('lib/document_not_found')
 require File.expand_path('lib/active_file')
