@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'fileutils'
 require 'brnumeros'
 require File.expand_path('lib/formatador_moeda')
