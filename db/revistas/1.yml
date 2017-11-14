@@ -1,0 +1,6 @@
+--- !ruby/object:Revista
+id: 1
+destroyed: false
+new_record: false
+titulo: Mundo J
+valor: 15.5
