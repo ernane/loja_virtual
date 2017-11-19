@@ -80,7 +80,7 @@ isbn: '1145'
 desconto: 0.15
 
 --- !ruby/object:Revista
-id: 1
+id: 7
 destroyed: false
 new_record: true
 titulo: MundoR

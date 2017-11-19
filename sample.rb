@@ -57,7 +57,7 @@ livros = [
 ]
 
 File.delete('midias.yml') if File.exist?('midias.yml')
-Dir.glob('db/revistas/*.yml').each { |file| File.delete(file) }
+# Dir.glob('db/revistas/*.yml').each { |file| File.delete(file) }
 # biblioteca = VendaFacil::Set.new
 biblioteca = Biblioteca.new
 livros.each do |livro|
